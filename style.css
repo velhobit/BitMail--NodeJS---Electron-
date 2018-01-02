@@ -1,0 +1,430 @@
+/**
+STYLE BITMAIL
+**/
+body{
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+    color: #f0f0f0;
+    margin-top: 35px;
+    
+    background-color: #2a292e;
+}
+
+header.top{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    padding: 10px 15px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    box-shadow: 0 0 20px rgba(0,0,0,1);
+}
+
+header.top .logo{
+    width: 70px;
+    position: relative;
+}
+
+header.top .logo img{
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+header.top h1{
+    margin: 0;
+    font-weight: 100;
+    letter-spacing: 2px;
+    margin-left: 10px;
+    color: #d9f3f4;
+    text-transform: uppercase;
+    font-size: 1em;
+}
+
+header.top .spacer{
+    flex: auto;
+    width: 100%;
+}
+
+.wrap{
+    width: 100%;
+    padding: 0;
+    box-sizing: border-box;
+    margin: 0 auto;
+}
+
+/**
+obs
+***/
+a.obs{
+    font-size: 12px;
+    font-weight: normal;
+    border: 1px solid white;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 10px 5px;
+    border-radius: 30px;
+    background-color: transparent;
+    display: block;
+    margin-top: 10px;
+    text-align: center;
+    
+    transition: 1s all;
+}
+a.obs:hover{
+    border: 1px solid #0089ff;
+    color: #00ceff;
+}
+
+/***
+FORM
+***/
+form{
+    margin: 0;
+    padding: 10px;
+}
+
+form input,
+form select,
+form textarea{
+    border: 1px solid #5d5a65;
+    padding: 8px 20px;
+    border-radius: 30px;
+    box-sizing: border-box;
+    background-color: transparent;
+    font-size: 14px;
+    color: #cecece;
+    font-family: 'Open Sans', sans-serif;
+    max-width: 100%;
+    
+    transition: all .3s;
+}
+
+form select{
+    border-radius: 5px;
+    padding-left: 10px;
+}
+
+form select option{
+    background-color: #2a292e;
+    border-radius: 10px;
+    margin: 0;
+}
+
+form input:focus,
+form select:focus,
+form textarea:focus{
+    outline: none;
+    border: 1px solid #049698;
+    color: #00dde0;
+}
+
+form input:disabled,
+form select:disabled,
+form textarea:disabled{
+    border: 1px solid #242424;
+    color: #818990;
+}
+
+form > div div{
+    margin-bottom: 10px;
+}
+
+form label{
+    font-weight: normal;
+    color: #a2c9c9;
+    display: block;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-left: 10px;
+}
+
+form button{
+    background-color: darkcyan;
+    padding: 10px 20px;
+    text-align: center;
+    color: white;
+    border: 0;
+    -webkit-appearance:none;
+    font-size: 16px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border-radius: 30px;
+    transition: .3s all ease-in;
+    cursor: pointer;
+}
+
+form button:focus{
+    outline: none;
+    border: 1px solid darkcyan;
+}
+
+form button:hover{
+    background-color: #005757;
+}
+
+form button[type=submit],
+form button.ok{
+    background-color: #00c1ab;
+}
+
+form button[type=submit]:hover,
+form button.ok:hover{
+    background-color: #00ad6b;
+}
+
+form button:disabled,
+form button[type=submit]:disabled,
+form button.ok:disabled{
+    background-color: #537775;
+    color: #a0afbc;
+    opacity: .5;
+}
+
+
+form button.file{
+    background-color: #0080ed;
+    width: 100%;
+    cursor: pointer;
+    color: azure;
+}
+form button.file:hover{
+    background-color: #0066f0;
+    color: white;
+}
+
+/***
+CURR_PANEL
+***/
+.form_email{
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 0;
+}
+
+.form_email > div{
+    width: 35%;
+    box-sizing: border-box;
+    padding: 20px;
+    height: 100%;
+}
+
+.form_email > div:nth-child(2){
+    background-color: #333336;
+}
+
+.form_email .buttons{
+    width: 30%;
+}
+.form_email .buttons button{
+    width: 100%;
+}
+
+.form_email input,
+.form_email textarea,
+.form_email select{
+    width: 100%;
+}
+
+/***
+FRONT PANEL
+***/
+.panel{
+    background-color: #2a2c2f;
+
+    position: absolute;
+    z-index: 10;
+    border-radius: 20px;
+    box-sizing: border-box;
+    box-shadow: 0 0 60px rgba(0,0,0,.85);
+    
+    left: 40px;
+    top: 130px;
+    right: 40px;
+    
+    opacity: 0;
+    pointer-events: none;
+    transition: all .5s ease;
+}
+
+
+.panel.show{
+    opacity: 1;
+    pointer-events: all;
+}
+
+.panel form{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+}
+
+.panel form > div{
+    margin-bottom: 0;
+}
+
+.panel form button,
+.panel form input,
+.panel form select{
+    width: 100%;
+}
+
+.panel form > div{
+    width: 38%;
+    box-sizing: border-box;
+    padding: 20px;
+}
+
+.panel form > div:nth-child(2){
+    background-color: #232324;
+}
+
+.panel form > div.buttons{
+    width: 24%;
+}
+
+.panel form > div h2{
+    margin: 0;
+    font-weight: 300;
+    margin-top: -10px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+/*Adv form*/
+.advanced{
+    position: absolute;
+    z-index: 1;
+    right: 15px;
+    top: 7.5px;
+    margin: 0;
+    padding: 0;
+}
+
+.advanced button.show_ad{
+    color: #d4c47e;
+    border: 1px solid #d4c47e;
+    background-color: transparent;
+    font-size: 14px;
+    padding: 5px 10px;
+}
+
+.advanced button.show_ad:hover{
+    color: yellow;
+}
+
+/**
+Status Bar
+**/
+.statusbar{
+    position: fixed;
+    z-index: 1;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    box-sizing: border-box;
+    padding: 0;
+    background-color: #e3e3e3;
+    color: #666;
+    text-align: center;
+    font-size: 11px;
+    
+    max-height: 0;
+    transition: all .5s ease;
+}
+.statusbar.on{
+    padding: 5px;
+    background-color: #0086f8;
+    color: white;
+    max-height: 200px;
+}
+
+.template_area{
+    background-color: #222529;
+    box-sizing: border-box;
+    padding: 5px;
+    
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.template_area > div{
+    width: 70px;
+    height: 100px;
+    position: relative;
+    margin: 2%;
+    border: 1px solid transparent;
+}
+
+.template_area > div.selected{
+    border: 2px solid #00ffeb;
+}
+
+.template_area > div img{
+    width: auto;
+    height: 100%;
+    display: block;
+    pointer-events: none;
+}
+
+.template_area > div.no_template{
+    background-color: black;
+}
+
+
+/***
+MODAL
+***/
+.modal{
+    pointer-events: none;
+    opacity: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    background-color: rgba(0,0,0,.75);
+    position: absolute;
+    transition: .3s opacity;
+}
+
+.modal.show{
+    opacity: 1;
+    pointer-events: all;
+}
+
+.modal.show.loading{
+    background-image: url(assets/loading.gif);
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+/***
+LANGUAGE
+***/
+.language{
+    margin-right: 200px;
+    display: flex;
+}
+
+.language button{
+    background-color: transparent;
+    color: #d1d1d1;
+    border-radius: 40px;
+    border: 1px solid #585858;
+    margin-right: 10px;
+    letter-spacing: 1px;
+    padding: 3px 10px;
+}
+
+.language button:focus{
+    outline: none;
+}
+
+.language button.select{
+    border: 1px solid white;
+    color: white;
+}

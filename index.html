@@ -1,0 +1,149 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Send Bulk Emails (Beta) 0.0.1</title>
+        
+        <!--Language-->
+        <script src="libs/language/pt_BR.js" type="text/javascript"></script>
+        <script src="libs/language/en_US.js" type="text/javascript"></script>
+        
+        <!--Style-->
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet">
+        <link href="style.css" rel="stylesheet">
+	</head>
+	<body>
+        <header class="top">
+            <div class="logo">
+                <img src="assets/logo.png"/>
+            </div>
+            <h1>BitMail</h1>
+            <div class="spacer"></div>
+             <!--Language--->
+            <div class="language">
+                <button class="pt_br" id="langPT_BR">Português</button>
+                <button class="en_us" id="langEN_US">English</button>
+            </div>
+        </header>
+		<div class="wrap">
+			<form class="form_email" id="mailForm">
+                <div class="mail_details">
+                    <div>
+                        <input type="hidden" id="templatePath" name="templatePath"/>
+                    </div>
+                    <div>
+                        <label for="name" rel="name">Name</label>
+                        <input type="email" id="name" name="name"/>
+                    </div>
+                    <div>
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email"/>
+                    </div>
+                    <div>
+                        <label for="password" rel="password">Password</label>
+                        <input type="password" id="pass" name="pass"/>
+                    </div>
+                    <div>
+                        <label for="host">Host</label>
+                        <select id="host" name="host">
+                            <option value="other" rel="custom">Custom</option>
+                            <option value="gmail">Gmail / G Suit</option>
+                            <option value="outlook">Outlook.com</option>
+                            <!--<option value="yahoo">Yahoo!</option>
+                            <option value="locaweb">Locaweb</option>
+                            <option value="kinghost">Kinghost</option>
+                            <option value="hostgator">Hostgator (no SSL)</option>
+                            <option value="uolhost">Uolhost</option>-->
+                        </select>
+                    </div>
+                </div>
+                <div class="message_details">
+                    <div>
+                        <label for="subject" rel="subject">Subject</label>
+                        <input type="text" id="subject" name="subject"/>
+                    </div>
+                    <div>
+                        <label for="message" rel="message">Message</label>
+                        <textarea id="message" name="message"></textarea>
+                    </div>
+                    <!--<div>
+                        <label for="to">To (splited by comma)</label>
+                        <textarea type="text" id="to" name="to"></textarea>
+                    </div>-->
+                    <div>
+                        <label for="file" id="uploadDetails" rel="send_csv_file">Send a CSV File</label>
+                        <button class="file" type="file" id="send" name="send" rel="send_file">Send e-mails CSV file</button>
+                        <a class="obs" rel="click_here_to_check">Click here to how format CSV file</a>
+                    </div>
+                </div>
+                <div class="buttons">
+                    <div>
+                        <label for="mailTest" rel="mail_test">Mail Test</label>
+                        <input id="mailTest" type="email"/>
+                    </div>
+                    <div>
+                        <button id="sendTest" rel="test">Test</button>
+                    </div>
+                    <div>
+                        <button id="submitButton" type="submit" rel="send" disabled>Send</button>
+                    </div>
+                </div>
+			</form>
+            <form class="advanced">
+                <button class="show_ad" id="advButton" rel="advanced_panel">Advanced Options</button>
+            </form>
+		</div>
+        <!--Panel with more details-->
+        <div id="advancedPanel" class="panel">
+            <form id="advForm">
+                <div class="smtp_details">
+                    <h2 rel="smtp_details">SMTP Details</h2>
+                    <div>
+                        <label for="smtp" rel="host_address">Host Address</label>
+                        <input type="text" id="smtp"/>
+                    </div>
+                    <div>
+                        <label for="port" rel="port">Port</label>
+                        <input type="number" id="port" min="1"/>
+                    </div>
+                    <div>
+                        <label for="secure" rel="secure">Secure</label>
+                        <select id="secure">
+                            <option value="false" rel="none">None</option>
+                            <option value="ssl">SSL/TLS</option>
+                            <option value="start">STARTTLS</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="time">
+                    <div>
+                        <label rel="emails_per_hour">E-mails per hour</label>
+                        <input type="number" id="byHour" min="1" value="200"/>
+                    </div>
+                </div>
+                <div class="buttons">
+                    <div>
+                        <button id="submitButton" type="submit" rel="done">Done</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        
+       
+        
+        <!--Templates-->
+        <div id="templates" class="template_area">
+        </div>
+        
+        <div class="modal" id="modal"></div>
+        
+        <div id="status" class="statusbar">
+        </div>
+        
+        <!--Scripts-->
+        <script>if (typeof module === 'object') {window.module = module; module = undefined;}</script>
+        <script src="libs/jquery-3.2.1.min.js" type="text/javascript"></script>
+        <script src="script.js" type="text/javascript"></script>
+        <script>if (window.module) module = window.module;</script>
+	</body>
+</html>
